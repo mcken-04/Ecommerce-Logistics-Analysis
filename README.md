@@ -52,6 +52,14 @@ The power BI dashboard was engineered using a clean Star-Shema Model to enable d
 * **Interactive Drill-Downs:** Selecting the *New Roberttown* warehouse dynamically filters driver lists, recalcualted SLA compliance percentages, and updates performnce trends.
 * **SLA Target tracking:** Dynamic KPI cards highlight dispatch durations and overall compliance rates in real-time.
 
+### Global Logistics Perfomrnce
+![Global View](images/dashboard_global_view.png)
+*Figure 1: High-level overview tracking company SLA compliance, warehouse dispatch averages, and driver fulfillment rates.*
+
+### Warehouse bottleneck Analysis (New Roberttown Deep-Dive)
+![New Roberttown View](images/dashboard_roberttown_view.png)
+*Figure 2: Dynamic cross-filtering isolating dispatch delays and driver performance specifically for the New Roberttown facility.*
+
 ---
 
 ## How to Replicate This Project
@@ -60,7 +68,7 @@ The power BI dashboard was engineered using a clean Star-Shema Model to enable d
    **Bash**
    `python data_genration_script.py`
 2. **Set Up PostgreSQL Datebase:**
-   * Import genrated CSVs into PostgreSQL and execute `01_dashboard_views.sql` and `02_exploratory_analysis.sql` to sonctruct analytical views.\
+   * Import genrated CSVs into PostgreSQL and execute `01_dashboard_views.sql` and `02_exploratory_analysis.sql` to sonctruct analytical views.
 3. **Open Power BI Report:**
    * Open `Logistics_analysis.pbip` in Power BI Desktop (Ensure Developer Mode enabled) view and interact with the data model and deashboard layout.
 
