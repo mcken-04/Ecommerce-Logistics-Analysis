@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["vw_supply_chain_lifecycle"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table vw_supply_chain_lifecycle
+ref table DateTableTemplate_e636ae04-189a-45f4-b190-3ea7c47803d8
+ref table LocalDateTable_b555b05d-a94b-4b41-815d-7394a77b31bd
+
+ref cultureInfo en-US
+

@@ -1,0 +1,133 @@
+table vw_supply_chain_lifecycle
+	lineageTag: 11d662f0-423f-48b2-92af-0ec4a2b98def
+
+	measure 'SLA Compliance %' = ```
+			
+			DIVIDE(
+			    SUM(vw_supply_chain_lifecycle[is_compliant]), 
+			    COUNT(vw_supply_chain_lifecycle[order_id]), 
+			    0
+			)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0c879965-937f-48c4-ad35-852747a63351
+
+	measure 'Total Orders Handled' = COUNT(vw_supply_chain_lifecycle[order_id])
+		formatString: 0
+		lineageTag: bde07859-2d14-450e-ad76-b27507cadfc6
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 29b878b3-dc7a-48d8-8693-cd4f71e0a809
+		summarizeBy: sum
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column driver_id
+		dataType: double
+		lineageTag: 9dcb100f-560d-45db-bdde-ca784bb9b996
+		summarizeBy: sum
+		sourceColumn: driver_id
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column driver_name
+		dataType: string
+		lineageTag: 06fffe1f-8a05-4bd1-bb77-6b7c065e4c30
+		summarizeBy: none
+		sourceColumn: driver_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_type
+		dataType: string
+		lineageTag: f50687b5-08c6-4135-93e1-f7eef8bf8801
+		summarizeBy: none
+		sourceColumn: vehicle_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 68648842-a7c3-415d-895f-9045b39dce92
+		summarizeBy: sum
+		sourceColumn: warehouse_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_state
+		dataType: string
+		lineageTag: b47a4dda-1d2d-4979-ac13-72126179a481
+		summarizeBy: none
+		sourceColumn: warehouse_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_city
+		dataType: string
+		lineageTag: fe2d09e3-71f8-4808-8dfe-a637feef0ecd
+		summarizeBy: none
+		sourceColumn: warehouse_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 606b212c-0985-4d86-b4d1-27adf556df2a
+		summarizeBy: none
+		sourceColumn: shipping_date
+
+		variation Variation
+			isDefault
+			relationship: 9d2a2116-5f77-4cad-90c1-aa5e588c3d54
+			defaultHierarchy: LocalDateTable_b555b05d-a94b-4b41-815d-7394a77b31bd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column hours_to_ship
+		dataType: double
+		formatString: 0.0
+		lineageTag: 619d2cc2-bf62-4e5d-86cf-17f27e868a71
+		summarizeBy: sum
+		sourceColumn: hours_to_ship
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_hours
+		dataType: double
+		lineageTag: aff392da-a856-43d0-afc4-880ae191ac7c
+		summarizeBy: sum
+		sourceColumn: delivery_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_compliant
+		dataType: int64
+		formatString: 0
+		lineageTag: a39bc4d7-7447-4174-aab8-7c6a424b03b4
+		summarizeBy: sum
+		sourceColumn: is_compliant
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_supply_chain_lifecycle = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    portfolio_project_4_vw_supply_chain_lifecycle = Source{[Schema="portfolio_project_4",Item="vw_supply_chain_lifecycle"]}[Data]
+				in
+				    portfolio_project_4_vw_supply_chain_lifecycle
+
+	changedProperty = Name
+

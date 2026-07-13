@@ -1,0 +1,5 @@
+relationship 9d2a2116-5f77-4cad-90c1-aa5e588c3d54
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_supply_chain_lifecycle.shipping_date
+	toColumn: LocalDateTable_b555b05d-a94b-4b41-815d-7394a77b31bd.Date
+
