@@ -1,23 +1,26 @@
-# Ecommerce Logistics & Delivery Performance Analysis
-End-to-end logistics analysis using Python, PostgreSQL, and Power BI
-## Executive Summary
-This project evalutes end-to-end logistics performance across warehouse and delivery drivers. Identifying supply chain bottlenecks and driver delivery trends. Utilizing custom-genrated simulation data in Python, relational modeling in PsotgreSQL, and dynamic reporting in Power BI. This analysis isolates core operational inefficiencies affecting SLA compliance.
+# 🚚 E-Commerce Logistics & Delivery Performance Analysis
+
+## 📌 Executive Summary
+This end-to-end data analytics project simulates and analyzes a 90-day e-commerce supply chain pipeline. The objective was to track orders from warehouse pick to final customer delivery, identify operational bottlenecks, and rank driver performance. 
+
+By designing a custom data generation script in **Python**, querying transactional event logs in **PostgreSQL**, and building a star-schema model in **Power BI Developer Mode (`.pbip`)**, this project provides actionable operational insights to improve delivery SLA compliance.
 
 ---
 
-## Tech Stack & Tools
-* **Data Simultion:** Python (`pandas`, `faker`, `datetime`)
-* **Data Engine:** PostgreSQL
-* **Data Querying & EDA:** SQL (CTEs, Window Functions, Interval Math, Aggregations)
-* **Data Visualization:** Power Bi (`.pbip` Developer Mode with Star_Schema design)
+## 🛠️ Tools & Technologies Used
+* **Data Generation & Engineering:** Python (`pandas`, `faker`, `datetime`)
+* **Database Management:** PostgreSQL
+* **Data Querying & Analysis:** Advanced SQL (Common Table Expressions (CTEs), Window Functions, Date/Time Interval Extraction, Aggregations)
+* **Data Visualization & Analytics:** Power BI saved in Developer Project format (`.pbip`)
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
+
 ```text
-├── 01_dashboard_views.sql         # Production SQL Views feeding Power BI
-├── 02_exploratory_analysis.sql    # Deep-dive EDA queries & anomaly detection
-├── data_generation_script.py      # Python script generating relational dataset
+├── 01_dashboard_views.sql         # Production SQL views used to feed Power BI
+├── 02_exploratory_analysis.sql    # Deep-dive EDA, anomaly detection, & supplementary views
+├── data_generation_script.py      # Python script used to build relational simulation data
 ├── Logistics_Analysis.pbip        # Power BI Project main file
-├── Logistics_Analysis.Report/     # Power BI visual layouts & report configs
-└── Logistics_Analysis.Dataset/    # Semantic model & DAX calculations
+├── Logistics_Analysis.Report/     # Visual layouts, theme configurations, & report pages
+└── Logistics_Analysis.Dataset/    # Semantic model, data connections, & DAX measures
