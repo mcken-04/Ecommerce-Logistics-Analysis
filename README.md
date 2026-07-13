@@ -65,4 +65,4 @@ The power BI dashboard was engineered using a clean Star-Shema Model to enable d
    * Open `Logistics_analysis.pbip` in Power BI Desktop (Ensure Developer Mode enabled) view and interact with the data model and deashboard layout.
 
 ```markdown
-![Dashboard Overview](logistics_performance_dawshboard.pdf)
+![Dashboard Overview](logistics_performance_dashboard.pdf)
