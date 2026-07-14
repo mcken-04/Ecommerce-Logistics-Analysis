@@ -69,7 +69,7 @@ The power BI dashboard was engineered using a clean Star-Shema Model to enable d
 
 ## How to Replicate This Project
 1. **Generate Data:**
-   Run the Python script to build the raw relational dataset:
+   * Run the Python script to build the raw relational dataset:
    **Bash**
    `python data_genration_script.py`
 2. **Set Up PostgreSQL Datebase:**
