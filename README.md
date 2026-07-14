@@ -18,12 +18,17 @@ By designing a custom data generation script in **Python**, querying transaction
 ## 📁 Repository Structure
 
 ```text
-├── 01_dashboard_views.sql         # Production SQL views used to feed Power BI
-├── 02_exploratory_analysis.sql    # Deep-dive EDA, anomaly detection, & supplementary views
-├── data_generation_script.py      # Python script used to build relational simulation data
-├── Logistics_Analysis.pbip        # Power BI Project main file
-├── Logistics_Analysis.Report/     # Visual layouts, theme configurations, & report pages
-└── Logistics_Analysis.Dataset/    # Semantic model, data connections, & DAX measures
+├── images/
+│   ├── dashboard_global_view.png                    # Screenshot of overall Power BI report view
+│   └── dashboard_roberttown_view.png                # Screenshot of filtered bottleneck view
+├── logistics_performance_dashboard.Report/          # Power BI visual layouts & report pages
+├── logistics_performance_dashboard.SemanticModel/   # DAX measures & data model
+├── 01_dashboard_views.sql                           # Production SQL views feeding Power BI
+├── 02_exploratory_analysis.sql                      # Deep-dive EDA & anomaly queries
+├── README.md                                        # Repository documentation & summary
+├── data_generation_script.py                        # Python simulation script
+├── logistics_performance_dashboard.pdf              # PDF export of Power BI report
+└── logistics_performance_dashboard.pbip             # Power BI Project main file
 ```
 ---
 
